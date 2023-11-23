@@ -11,9 +11,9 @@ BEGIN
     BEGIN
         BLOCK "040904B0"
         BEGIN
-            VALUE "FileDescription",  "Elvarg"
-            VALUE "OriginalFilename", "Elvarg.exe"
-            VALUE "ProductName",      "Elvarg Launcher"
+            VALUE "FileDescription",  "Cryptic"
+            VALUE "OriginalFilename", "Cryptic.exe"
+            VALUE "ProductName",      "Cryptic Launcher"
         END
     END
 

@@ -81,15 +81,15 @@ jlink \
   --add-modules jdk.xml.dom \
   --add-modules jdk.zipfs
 
-cp native/build-aarch64/src/Release/Elvarg.exe build/win-aarch64/
-cp target/Elvarg.jar build/win-aarch64/
+cp native/build-aarch64/src/Release/Cryptic.exe build/win-aarch64/
+cp target/Cryptic.jar build/win-aarch64/
 cp packr/win-aarch64-config.json build/win-aarch64/config.json
 cp liblauncher/buildaarch64/Release/launcher_aarch64.dll build/win-aarch64/
 
-echo Elvarg.exe aarch64 sha256sum
-sha256sum build/win-aarch64/Elvarg.exe
+echo Cryptic.exe aarch64 sha256sum
+sha256sum build/win-aarch64/Cryptic.exe
 
-dumpbin //HEADERS build/win-aarch64/Elvarg.exe
+dumpbin //HEADERS build/win-aarch64/Cryptic.exe
 
 # We use the filtered iss file
 iscc target/filtered-resources/arch64.iss

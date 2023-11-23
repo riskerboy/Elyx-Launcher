@@ -1,10 +1,10 @@
 [Setup]
-AppName=Elvarg Launcher
-AppPublisher=Elvarg
-UninstallDisplayName=Elvarg
+AppName=Cryptic Launcher
+AppPublisher=Cryptic
+UninstallDisplayName=Cryptic
 AppVersion=${project.version}
-AppSupportURL=https://elvarg.net/
-DefaultDirName={localappdata}\Elvarg
+AppSupportURL=https://zaryte.io/
+DefaultDirName={localappdata}\Cryptic
 
 ; ~30 mb for the repo the launcher downloads
 ExtraDiskSpaceRequired=30000000
@@ -14,13 +14,13 @@ PrivilegesRequired=lowest
 WizardSmallImageFile=${basedir}/app_small.bmp
 WizardImageFile=${basedir}/left.bmp
 SetupIconFile=${basedir}/app.ico
-UninstallDisplayIcon={app}\Elvarg.exe
+UninstallDisplayIcon={app}\Cryptic.exe
 
 Compression=lzma2
 SolidCompression=yes
 
 OutputDir=${basedir}
-OutputBaseFilename=ElvargSetup
+OutputBaseFilename=CrypticSetup
 
 [Tasks]
 Name: DesktopIcon; Description: "Create a &desktop icon";
@@ -29,31 +29,31 @@ Name: DesktopIcon; Description: "Create a &desktop icon";
 Source: "${basedir}\app.ico"; DestDir: "{app}"
 Source: "${basedir}\left.bmp"; DestDir: "{app}"
 Source: "${basedir}\app_small.bmp"; DestDir: "{app}"
-Source: "${basedir}\build\win-x64\Elvarg.exe"; DestDir: "{app}"
-Source: "${basedir}\build\win-x64\Elvarg.jar"; DestDir: "{app}"
+Source: "${basedir}\build\win-x64\Cryptic.exe"; DestDir: "{app}"
+Source: "${basedir}\build\win-x64\Cryptic.jar"; DestDir: "{app}"
 Source: "${basedir}\build\win-x64\launcher_amd64.dll"; DestDir: "{app}"
 Source: "${basedir}\build\win-x64\config.json"; DestDir: "{app}"
 Source: "${basedir}\build\win-x64\jre\*"; DestDir: "{app}\jre"; Flags: recursesubdirs
 
 [Icons]
 ; start menu
-Name: "{userprograms}\Elvarg\Elvarg"; Filename: "{app}\Elvarg.exe"
-Name: "{userprograms}\Elvarg\Elvarg (configure)"; Filename: "{app}\Elvarg.exe"; Parameters: "--configure"
-Name: "{userprograms}\Elvarg\Elvarg (safe mode)"; Filename: "{app}\Elvarg.exe"; Parameters: "--safe-mode"
-Name: "{userdesktop}\Elvarg"; Filename: "{app}\Elvarg.exe"; Tasks: DesktopIcon
+Name: "{userprograms}\Cryptic\Cryptic"; Filename: "{app}\Cryptic.exe"
+Name: "{userprograms}\Cryptic\Cryptic (configure)"; Filename: "{app}\Cryptic.exe"; Parameters: "--configure"
+Name: "{userprograms}\Cryptic\Cryptic (safe mode)"; Filename: "{app}\Cryptic.exe"; Parameters: "--safe-mode"
+Name: "{userdesktop}\Cryptic"; Filename: "{app}\Cryptic.exe"; Tasks: DesktopIcon
 
 [Run]
-Filename: "{app}\Elvarg.exe"; Parameters: "--postinstall"; Flags: nowait
-Filename: "{app}\Elvarg.exe"; Description: "&Open Elvarg"; Flags: postinstall skipifsilent nowait
+Filename: "{app}\Cryptic.exe"; Parameters: "--postinstall"; Flags: nowait
+Filename: "{app}\Cryptic.exe"; Description: "&Open Cryptic"; Flags: postinstall skipifsilent nowait
 
 [InstallDelete]
 ; Delete the old jvm so it doesn't try to load old stuff with the new vm and crash
 Type: filesandordirs; Name: "{app}\jre"
 ; previous shortcut
-Type: files; Name: "{userprograms}\Elvarg.lnk"
+Type: files; Name: "{userprograms}\Cryptic.lnk"
 
 [UninstallDelete]
-Type: filesandordirs; Name: "{%USERPROFILE}\.elvarg\repository2"
+Type: filesandordirs; Name: "{%USERPROFILE}\.cryptic\repository2"
 ; includes install_id, settings, etc
 Type: filesandordirs; Name: "{app}"
 
