@@ -16,7 +16,7 @@ begin
   Result := True;
   if EndsWith('!', username) then
   begin
-    MsgBox('Cryptic is incompatible with Windows usernames which end with an exclamation mark (!).',
+    MsgBox('Decimation is incompatible with Windows usernames which end with an exclamation mark (!).',
       mbError, MB_OK);
     Result := False;
   end;

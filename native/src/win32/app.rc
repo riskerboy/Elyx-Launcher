@@ -11,9 +11,9 @@ BEGIN
     BEGIN
         BLOCK "040904B0"
         BEGIN
-            VALUE "FileDescription",  "Cryptic"
-            VALUE "OriginalFilename", "Cryptic.exe"
-            VALUE "ProductName",      "Cryptic Launcher"
+            VALUE "FileDescription",  "Decimation"
+            VALUE "OriginalFilename", "Decimation.exe"
+            VALUE "ProductName",      "Decimation Launcher"
         END
     END
 

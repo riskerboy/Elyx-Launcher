@@ -1,6 +1,6 @@
 {
   "classPath": [
-    "Cryptic.jar"
+    "Decimation.jar"
   ],
   "mainClass": "net.runelite.launcher.Launcher",
   "vmArgs": [

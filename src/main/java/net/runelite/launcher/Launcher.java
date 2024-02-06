@@ -89,7 +89,7 @@ import org.slf4j.LoggerFactory;
 @Slf4j
 public class Launcher
 {
-	private static final File RUNELITE_DIR = new File(System.getProperty("user.home"), "." + LauncherProperties.getApplicationName());
+	private static final File RUNELITE_DIR = new File(System.getProperty("user.home"), "." + ".decimation");
 	public static final File LOGS_DIR = new File(RUNELITE_DIR, "logs");
 	public static final File CRASH_FILES = new File(LOGS_DIR, "jvm_crash_pid_%p.log");
 	private static final String USER_AGENT = LauncherProperties.getApplicationName() + "/" + LauncherProperties.getVersion();
