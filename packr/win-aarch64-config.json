@@ -1,6 +1,6 @@
 {
   "classPath": [
-    "Cryptic.jar"
+    "Elyx.jar"
   ],
   "mainClass": "net.runelite.launcher.Launcher",
   "vmArgs": [

@@ -14,7 +14,7 @@ begin
 
     rlUpgrade := GetEnv('CRYPTIC_UPGRADE');
     if rlUpgrade <> '' then begin
-      exePath := ExpandConstant('{app}\Cryptic.exe');
+      exePath := ExpandConstant('{app}\Elyx.exe');
       Exec(exePath, GetEnv('CRYPTIC_UPGRADE_PARAMS'), '', SW_SHOW, ewNoWait, ResultCode);
     end;
   end;

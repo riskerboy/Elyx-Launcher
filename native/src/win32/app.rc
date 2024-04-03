@@ -11,9 +11,9 @@ BEGIN
     BEGIN
         BLOCK "040904B0"
         BEGIN
-            VALUE "FileDescription",  "Cryptic"
-            VALUE "OriginalFilename", "Cryptic.exe"
-            VALUE "ProductName",      "Cryptic Launcher"
+            VALUE "FileDescription",  "Elyx"
+            VALUE "OriginalFilename", "Elyx.exe"
+            VALUE "ProductName",      "Elyx Launcher"
         END
     END
 

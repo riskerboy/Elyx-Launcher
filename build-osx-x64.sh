@@ -2,7 +2,7 @@
 
 set -e
 
-APPBASE="build/macos-x64/Cryptic.app"
+APPBASE="build/macos-x64/Elyx.app"
 
 build() {
     pushd native
@@ -23,8 +23,8 @@ build() {
 
     mkdir -p $APPBASE/Contents/{MacOS,Resources}
 
-    cp native/build-x64/src/Cryptic $APPBASE/Contents/MacOS/
-    cp target/Cryptic.jar $APPBASE/Contents/Resources/
+    cp native/build-x64/src/Elyx $APPBASE/Contents/MacOS/
+    cp target/Elyx.jar $APPBASE/Contents/Resources/
     cp packr/macos-x64-config.json $APPBASE/Contents/Resources/config.json
     cp target/filtered-resources/Info.plist $APPBASE/Contents/
     cp osx/app.icns $APPBASE/Contents/Resources/icons.icns
@@ -33,12 +33,12 @@ build() {
     mkdir $APPBASE/Contents/Resources/jre
     mv jdk-$MAC_AMD64_VERSION-jre/Contents/Home/* $APPBASE/Contents/Resources/jre
 
-    echo Setting world execute permissions on Cryptic
+    echo Setting world execute permissions on Elyx
     pushd $APPBASE
-    chmod g+x,o+x Contents/MacOS/Cryptic
+    chmod g+x,o+x Contents/MacOS/Elyx
     popd
 
-    otool -l $APPBASE/Contents/MacOS/Cryptic
+    otool -l $APPBASE/Contents/MacOS/Elyx
 }
 
 dmg() {
@@ -48,24 +48,24 @@ dmg() {
     # create-dmg exits with an error code due to no code signing, but is still okay
     # note we use Adam-/create-dmg as upstream does not support UDBZ
     create-dmg --format UDBZ $APPBASE . || true
-    mv Cryptic\ *.dmg Cryptic-x64.dmg
+    mv Elyx\ *.dmg Elyx-x64.dmg
 
     # dump for CI
-    hdiutil imageinfo Cryptic-x64.dmg
+    hdiutil imageinfo Elyx-x64.dmg
 
-    if ! hdiutil imageinfo Cryptic-x64.dmg | grep -q "Format: UDBZ" ; then
+    if ! hdiutil imageinfo Elyx-x64.dmg | grep -q "Format: UDBZ" ; then
         echo "Format of resulting dmg was not UDBZ, make sure your create-dmg has support for --format"
         exit 1
     fi
 
-    if ! hdiutil imageinfo Cryptic-x64.dmg | grep -q "Apple_HFS" ; then
+    if ! hdiutil imageinfo Elyx-x64.dmg | grep -q "Apple_HFS" ; then
         echo Filesystem of dmg is not Apple_HFS
         exit 1
     fi
 
     # Notarize app
-    if xcrun notarytool submit Cryptic-x64.dmg --wait --keychain-profile "AC_PASSWORD" ; then
-        xcrun stapler staple Cryptic-x64.dmg
+    if xcrun notarytool submit Elyx-x64.dmg --wait --keychain-profile "AC_PASSWORD" ; then
+        xcrun stapler staple Elyx-x64.dmg
     fi
 }
 

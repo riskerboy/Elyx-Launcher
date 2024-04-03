@@ -21,18 +21,18 @@ fi
 
 echo "$WIN64_CHKSUM win64_jre.zip" | sha256sum -c
 
-cp native/build-x64/src/Release/Cryptic.exe build/win-x64/
-cp target/Cryptic.jar build/win-x64/
+cp native/build-x64/src/Release/Elyx.exe build/win-x64/
+cp target/Elyx.jar build/win-x64/
 cp packr/win-x64-config.json build/win-x64/config.json
 cp liblauncher/build64/Release/launcher_amd64.dll build/win-x64/
 
 unzip win64_jre.zip
 mv jdk-$WIN64_VERSION-jre build/win-x64/jre
 
-echo Cryptic.exe 64bit sha256sum
-sha256sum build/win-x64/Cryptic.exe
+echo Elyx.exe 64bit sha256sum
+sha256sum build/win-x64/Elyx.exe
 
-dumpbin //HEADERS build/win-x64/Cryptic.exe
+dumpbin //HEADERS build/win-x64/Elyx.exe
 
 # We use the filtered iss file
 iscc target/filtered-resources/app.iss
