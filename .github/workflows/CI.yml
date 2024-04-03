@@ -62,9 +62,9 @@ jobs:
         with:
           name: windows
           path: |
-            CrypticSetup.exe
-            CrypticSetup32.exe
-            CrypticSetupAArch64.exe
+            ElyxSetup.exe
+            ElyxSetup32.exe
+            ElyxSetupAArch64.exe
           if-no-files-found: error
   linux:
     runs-on: ubuntu-20.04

@@ -20,7 +20,7 @@ Compression=lzma2
 SolidCompression=yes
 
 OutputDir=${basedir}
-OutputBaseFilename=CrypticSetupAArch64
+OutputBaseFilename=ElyxSetupAArch64
 
 [Tasks]
 Name: DesktopIcon; Description: "Create a &desktop icon";
